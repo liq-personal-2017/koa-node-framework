@@ -1,0 +1,30 @@
+{
+    "presets": [],
+    "plugins": [
+        "transform-decorators-legacy",
+        "syntax-dynamic-import",
+        "dynamic-import-node",
+        "transform-es2015-modules-commonjs",
+        [
+            "transform-class-properties",
+            {
+                "spec": true
+            }
+        ]
+    ],
+    "env": {
+        "production": {
+            "plugins": [
+                [
+                    "minify-dead-code-elimination",
+                    {
+                        "keepFnArgs": true,
+                        "keepFnName": true,
+                        "keepClassName": true
+                    }
+                ],
+                "transform-node-env-inline"
+            ]
+        }
+    }
+}
